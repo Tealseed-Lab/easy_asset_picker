@@ -1,0 +1,29 @@
+name: easy_asset_picker
+description: "A simple image picker implementation."
+version: 0.0.1
+homepage: https://github.com/Tealseed-Lab/easy_asset_picker
+issue_tracker: https://github.com/Tealseed-Lab/easy_asset_picker/issues
+
+environment:
+  sdk: ^3.6.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mobx: ^2.3.3+2
+  flutter_mobx: ^2.2.1+1
+  uuid: ^4.5.0
+  modal_bottom_sheet: ^3.0.0
+  photo_manager: ^3.6.3
+  flutter_progress_hud: ^2.0.2
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  flutter_image_compress: ^2.3.0
+
+dev_dependencies:
+  build_runner: ^2.4.10
+  flutter_lints: ^3.0.0
+  mobx_codegen: ^2.6.1
+
+flutter:
