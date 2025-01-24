@@ -71,7 +71,7 @@ abstract class AssetPickerStoreBase with Store {
     if (_loadingStatus == LoadingStatus.loading || _loadingStatus == LoadingStatus.loadingMore) return;
     _loadingStatus = LoadingStatus.loading;
     final result = await PhotoManager.requestPermissionExtend();
-    if (result == PermissionState.authorized) {
+    if (result == PermissionState.authorized || result == PermissionState.limited) {
       _permissionState = AppPermissionState.authorized;
       final assets = await PhotoManager.getAssetListRange(
         type: RequestType.image,
