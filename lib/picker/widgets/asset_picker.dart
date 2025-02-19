@@ -79,6 +79,7 @@ class AssetPicker extends StatelessWidget {
                 }
                 final info = await compressAndCorrectImage(
                   id: asset.id,
+                  assetEntity: asset,
                   sourcePath: file.path,
                 );
                 if (info == null) {
@@ -205,10 +206,10 @@ class AssetPicker extends StatelessWidget {
     );
   }
 
-  @override
   Future<AssetImageInfo?> compressAndCorrectImage({
     String? id,
     required String sourcePath,
+    required AssetEntity assetEntity,
   }) async {
     final dir = await getTemporaryDirectory();
     final targetPath = join(dir.absolute.path, "${DateTime.now().millisecondsSinceEpoch}.jpg");
@@ -225,6 +226,7 @@ class AssetPicker extends StatelessWidget {
         path: result.path,
         mimeType: result.mimeType,
         name: result.name,
+        assetEntity: assetEntity,
       );
     }
   }
